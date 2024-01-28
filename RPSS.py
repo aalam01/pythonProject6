@@ -79,6 +79,7 @@ class Game:
             return "loss"
 
     def play_game(self):
+        self.create_players()
         for _ in range(3):
             self.play_round()
 
@@ -104,10 +105,6 @@ class Game:
 class GameDriver:
     def __init__(self):
         self.game = Game()
-        self.initialize_players()  # Initialize players at the start
-
-    def initialize_players(self):
-        self.game.create_players()
 
     def show_statistics(self):
         for player in self.game.players:
@@ -149,4 +146,5 @@ class GameDriver:
 if __name__ == "__main__":
     game_driver = GameDriver()
     game_driver.main_menu()
+
 
